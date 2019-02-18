@@ -3,11 +3,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -18,9 +14,15 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class Excel {
 
 
+
     private String nombreArchivo;
     private FileOutputStream salida;
-    private Workbook workbook = new XSSFWorkbook();
+    private Workbook workbook;
+
+    public Excel(){
+        workbook = new XSSFWorkbook();
+
+    }
 
     public void comprobarExcel(String hoja, String algoritmo) {
         nombreArchivo = "tiempos-" + algoritmo + ".xlsx";
@@ -28,6 +30,10 @@ public class Excel {
         try {
             if (archivo.exists()) {
                 archivo.delete();
+                archivo.createNewFile();
+                crearExcel(hoja);
+            }else{
+                archivo.createNewFile();
                 crearExcel(hoja);
             }
 
@@ -72,8 +78,6 @@ public class Excel {
 
         }catch(IOException e){
             e.printStackTrace();
-        }catch (InvalidFormatException e2){
-            e2.printStackTrace();
         }
     }
 
@@ -119,8 +123,6 @@ public class Excel {
 
         }catch(IOException e){
             e.printStackTrace();
-        }catch (InvalidFormatException e2){
-            e2.printStackTrace();
         }
 
     }
@@ -181,8 +183,6 @@ public class Excel {
 
         }catch(IOException e){
             e.printStackTrace();
-        }catch(InvalidFormatException e2){
-            e2.printStackTrace();
         }
     }
 }

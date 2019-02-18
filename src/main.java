@@ -1,15 +1,9 @@
 
-import org.apache.poi.hssf.usermodel.HSSFCell;
-import org.apache.poi.hssf.usermodel.HSSFRow;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-
-import org.apache.poi.ss.usermodel.Cell;
 
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Random;
-import java.util.Set;
+
 
 public class main {
 
@@ -22,7 +16,8 @@ public class main {
         Collection<Instancia> instancias = hashInstancias.getInstancias();
         Iterator<Instancia> iterator = instancias.iterator();
         Excel excel = new Excel();
-        excel.comprobarExcel("VNS", "VNS");
+
+       excel.comprobarExcel("VNS", "VNS");
         while(iterator.hasNext()){
             Instancia next = iterator.next();
             Random r = new Random();
