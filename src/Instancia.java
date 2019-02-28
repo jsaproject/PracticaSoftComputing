@@ -10,13 +10,22 @@ public class Instancia {
     float funcion_objetivo;
     float tiempo;
     String nombre_instancia;
-
+    Integer num_vertices;
 
     public Instancia() {
         this.vertices = new HashMap<>();
         this.funcion_objetivo = -1;
         this.tiempo = -1;
         this.nombre_instancia = "";
+        this.num_vertices = -1;
+    }
+
+    public Integer getNum_vertices() {
+        return num_vertices;
+    }
+
+    public void setNum_vertices(Integer num_vertices) {
+        this.num_vertices = num_vertices;
     }
 
     public float getFuncion_objetivo() {

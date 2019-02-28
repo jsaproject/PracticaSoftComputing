@@ -1,5 +1,6 @@
 
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Random;
@@ -8,6 +9,7 @@ import java.util.Random;
 public class main {
 
     public static void main(String[] args) {
+
 
         String ruta_carpeta = "C:\\instancias";
 
@@ -29,6 +31,9 @@ public class main {
         }
         excel.hallarPromedio();
         excel.cerrarExcel();
+
+
+
 
     }
 }

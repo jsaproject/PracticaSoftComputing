@@ -55,8 +55,10 @@ public class HashInstancias {
 
 
             String linea = br.readLine();
+            String []  bar = linea.split(" ");
+            instancia.setNum_vertices(Integer.parseInt(bar[1]));
             while((linea=br.readLine())!=null){
-                String []  bar = linea.split(" ");
+                bar = linea.split(" ");
 
                 v = Integer.parseInt(bar[0]);
                 v2 = Integer.parseInt(bar[1]);
@@ -65,10 +67,12 @@ public class HashInstancias {
 
                 if (v != aux){
                     instancia.setVertice(v);
+                    instancia.setVertice(v2);
                 }
 
                 aux = v;
                 instancia.setArco(v,v2,distancia);
+                instancia.setArco(v2,v,distancia);
 
             }
         }catch(Exception e){
