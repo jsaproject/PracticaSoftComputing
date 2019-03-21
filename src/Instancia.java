@@ -52,9 +52,26 @@ public class Instancia {
         this.nombre_instancia = nombre_instancia;
     }
 
-    public Set<Integer> getAristas(Integer a) {
+    public ArrayList<Integer> getAristasOrdenadas(Integer a) {
+        ArrayList<Integer> integers = new ArrayList<>();
         HashMap<Integer, Float> integerFloatHashMap = vertices.get(a);
-        return integerFloatHashMap.keySet();
+        Iterator<Integer> iterator = integerFloatHashMap.keySet().iterator();
+        int i = 0;
+        float max = 0;
+        while(iterator.hasNext()){
+            Integer next = iterator.next();
+            if (i!=0){
+                if (getDistancia(a,next)>max){
+                    integers.add(0,next);
+                    integers.add(i,next);
+                }
+            }else{
+                integers.add(i,next);
+                max = getDistancia(a,next);
+            }
+        }
+
+        return integers;
     }
 
     public Set<Integer> getVertices() {
