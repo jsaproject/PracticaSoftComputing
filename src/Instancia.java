@@ -52,7 +52,7 @@ public class Instancia {
         this.nombre_instancia = nombre_instancia;
     }
 
-    public ArrayList<Integer> getAristasOrdenadas(Integer a) {
+    public ArrayList<Integer> getAristasOrdenadas(Integer a, Set<Integer> nodos_visitados) {
         ArrayList<Integer> integers = new ArrayList<>();
         HashMap<Integer, Float> integerFloatHashMap = vertices.get(a);
         Iterator<Integer> iterator = integerFloatHashMap.keySet().iterator();
@@ -60,15 +60,19 @@ public class Instancia {
         float max = 0;
         while(iterator.hasNext()){
             Integer next = iterator.next();
-            if (i!=0){
-                if (getDistancia(a,next)>max){
-                    integers.add(0,next);
+            if (!nodos_visitados.contains(next)){
+                if (i!=0){
+                    if (getDistancia(a,next)>max) {
+                        integers.add(0, next);
+                    }else {
+                        integers.add(i,next);
+                    }
+                }else{
                     integers.add(i,next);
+                    max = getDistancia(a,next);
                 }
-            }else{
-                integers.add(i,next);
-                max = getDistancia(a,next);
             }
+
         }
 
         return integers;
