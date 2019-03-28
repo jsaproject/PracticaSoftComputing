@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Random;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -33,41 +34,19 @@ public class Grasp {
 
 
     private Solucion shake (Solucion solucionFinal, int kactual) {
-        int p = Runtime.getRuntime().availableProcessors();
-        ExecutorService pool = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
-        CountDownLatch latch = new CountDownLatch(p);
-        int k = 1;
-        int kmax = 10;
-        int iter = 1;
-        while(k<=kmax){
-            final int kfinal = k;
-            for (int i =0; i<p; i++){
-                final int processor = i;
-                pool.submit(() ->{
-                    shake2(processor, kfinal);
-                    improve2(processor,kfinal);
-                    latch.countDown();
-                });
-            }
-            latch.await();
+        Solucion solucion = new Solucion(solucionFinal.getNodos_ordenados(), solucionFinal.getNodos_distancia(),solucionFinal.getValorObjetivo(),solucionFinal.getNodos_escogidos(), solucionFinal.getNodosAleatorios(), solucionFinal.getCambios_ordenados());
+        Random rand = new Random();
+        solucion = solucionFinal;
+        int max = i.getNum_vertices();
+        int min = 1;
+        int i = 0;
+        while(i < kactual){
+            int posicion1 = rand.nextInt(max - min) + min;
+            int posicion2 = rand.nextInt(max - min) + min;
 
-            k++;
-
-            System.out.println("Iteracion"+ iter);
-            iter++;
         }
 
-        ArrayList<Integer> nodos_ordenados = solucionFinal.getNodos_ordenados();
-        pool.shutdown();
-        return new Solucion();
-    }
-
-    private void shake2(int a, int b){
-        System.out.println("Procesador: "+a+" , K actual: " + b);
-    }
-
-    private void improve2(int a, int b){
-        System.out.println("Procesador: "+a+" , K actual: " + b);
+        return solucion;
     }
 
 

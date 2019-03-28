@@ -78,6 +78,15 @@ public class Instancia {
         return integers;
     }
 
+    public ArrayList<Integer> getAristas(int a){
+        ArrayList<Integer> aristas = new ArrayList<>();
+        Iterator<Integer> iterator = vertices.get(a).keySet().iterator();
+        while(iterator.hasNext()){
+            aristas.add(iterator.next());
+        }
+        return aristas;
+    }
+
     public Set<Integer> getVertices() {
         return vertices.keySet();
     }
