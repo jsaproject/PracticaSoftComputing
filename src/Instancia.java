@@ -24,6 +24,10 @@ public class Instancia {
         return num_vertices;
     }
 
+    public Integer getNum_verticestotales(){
+        return vertices.size();
+    }
+
     public void setNum_vertices(Integer num_vertices) {
         this.num_vertices = num_vertices;
     }
@@ -98,7 +102,10 @@ public class Instancia {
 
     public void setVertice(Integer a) {
             HashMap<Integer, Float> integerFloatHashMap = new HashMap<>();
-            vertices.put(a, integerFloatHashMap);
+            if (vertices.get(a) == null){
+                vertices.put(a, integerFloatHashMap);
+            }
+
 
         }
 

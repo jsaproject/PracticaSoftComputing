@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Set;
@@ -9,12 +10,12 @@ import java.util.Set;
 public class HashInstancias {
 
 
-    private HashMap<Integer, Instancia> lista_instancias;
+    private ArrayList<Instancia> lista_instancias;
 
     private int a;
 
     public void inicializarMapInstancias(String ruta_carpeta) {
-        lista_instancias = new HashMap<>();
+        lista_instancias = new ArrayList<>();
         File carpeta = null;
         int i = 0;
         a=0;
@@ -28,7 +29,7 @@ public class HashInstancias {
                     //inicializarMapInstancias(name);
                 } else {
                     Instancia instancia = inicializarInstancia(ruta_carpeta + "\\" + ficheroEntrada.getName(), ficheroEntrada.getName());
-                    lista_instancias.put(a,instancia);
+                    lista_instancias.add(a,instancia);
                     a++;
                 }
             }
@@ -64,13 +65,10 @@ public class HashInstancias {
                 v2 = Integer.parseInt(bar[1]);
                 distancia = Float.parseFloat(bar[2]);
 
+                instancia.setVertice(v);
+                instancia.setVertice(v2);
 
-                if (v != aux){
-                    instancia.setVertice(v);
-                    instancia.setVertice(v2);
-                }
 
-                aux = v;
                 instancia.setArco(v,v2,distancia);
                 instancia.setArco(v2,v,distancia);
 
@@ -93,8 +91,8 @@ public class HashInstancias {
     
     }
 
-    public Collection<Instancia> getInstancias (){
-        return  lista_instancias.values();
+    public ArrayList<Instancia> getInstancias (){
+        return  lista_instancias;
     }
 
 
