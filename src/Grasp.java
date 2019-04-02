@@ -8,13 +8,15 @@ public class Grasp {
     private Solucion solucionFinal;
     private float funcionObjetivo;
     private int kmaximo;
-    private Set<String> solucionesVisitadas;
+    private Set<Integer> solucionesVisitadas;
+    private Set<Solucion> solucionesguardadas;
 
     public Grasp() {
         this.solucionFinal = new Solucion();
         this.funcionObjetivo = -1;
         this.kmaximo = -1;
-        solucionesVisitadas = new HashSet<>();
+        this.solucionesVisitadas = new HashSet<>();
+        this.solucionesguardadas = new HashSet<>();
     }
 
 
@@ -29,7 +31,8 @@ public class Grasp {
     public int BVNS(Solucion a, int kmax, long finaltime){
 
         solucionFinal = a;
-        solucionesVisitadas.add(solucionFinal.getHashValuenormal());
+        solucionesVisitadas.add(solucionFinal.hashCode());
+        solucionesguardadas.add(solucionFinal);
         funcionObjetivo = solucionFinal.getValorObjetivo();
         kmaximo = kmax;
         Solucion solucionShake = new Solucion();
@@ -40,9 +43,10 @@ public class Grasp {
             int kactual = 1;
             while(kactual<=kmax){
                     solucionShake = shake(a, kactual);
-                    if(!solucionesVisitadas.contains(solucionShake.getHashValueShake())){
+                    if(!solucionesVisitadas.contains(solucionShake.hashCode())){
                         solucionLocalSearch = localSearch(solucionShake);
-                        solucionesVisitadas.add(solucionLocalSearch.getHashValueShake());
+                        solucionesVisitadas.add(solucionLocalSearch.hashCode());
+                        solucionesguardadas.add(solucionLocalSearch);
                         kactual = NeighborhoodChange(solucionFinal,solucionLocalSearch, kactual);
                     }else{
                         kactual++;
@@ -67,31 +71,25 @@ public class Grasp {
 
 
     private Solucion shake (Solucion solucionFinal, int kactual) {
-        Solucion solucion = new Solucion(solucionFinal.getNodos_ordenados(),solucionFinal.getValorObjetivo(), solucionFinal.getI(),solucionFinal.getNodos_escogidos(),solucionFinal.getHashValuenormal());
+        Solucion solucion = new Solucion(solucionFinal.getNodos_ordenados(),solucionFinal.getValorObjetivo(), solucionFinal.getI(),solucionFinal.getNodos_escogidos());
         Random rand = new Random();
         int max = solucionFinal.getNodos_ordenados().size()-1;
         int min = 0;
         int i = 0;
-/*        Integer[] arrayEnteros = new Integer[2];
-        HashMap<Integer, Integer[]> valores_cambiados = new HashMap<>();*/
-        while(i < kactual){
-/*            arrayEnteros[0] = rand.nextInt(max - min) + min;
-            arrayEnteros[1] = rand.nextInt(max - min) + min;
 
-            valores_cambiados.put(i,arrayEnteros);
-            i++;*/
+        while(i < kactual){
+
 
         solucion.realizarCambios(rand.nextInt(max - min) + min);
         i++;
         }
-        //solucion.realizarCambios(valores_cambiados);
+
 
         return solucion;
     }
 
 
     private Solucion localSearch(Solucion solucionShake) {
-        solucionShake.calcularFuncionObjetivo();
         return solucionShake;
     }
 

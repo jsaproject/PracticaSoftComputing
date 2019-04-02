@@ -26,9 +26,9 @@ public class main {
             Solucion solucion = new Solucion();
 
             solucion.generarSolucionInicial(next);
-            long startTime = System.nanoTime();;
+            long startTime = System.nanoTime()*100000000;;
             grasp.BVNS(solucion,500, 15);
-            long endTime = System.currentTimeMillis() - startTime;
+            long endTime = System.nanoTime()- startTime ;
             next.setFuncion_objetivo(grasp.getFuncionObjetivo());
             next.setTiempo(endTime);
             excel.insertarInstancia(next);
