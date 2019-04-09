@@ -62,7 +62,7 @@ public class Solucion {
     }
 
 
-    public Solucion generarSolucionInicial(Instancia instancia){
+/*    public Solucion generarSolucionInicial(Instancia instancia){
         inst = instancia;
         Random rand = new Random();
         int max = instancia.getNum_vertices();
@@ -111,7 +111,7 @@ public class Solucion {
         }
 
         return this;
-    }
+    }*/
 
     public void realizarCambios(int a) {
 
@@ -165,6 +165,10 @@ public class Solucion {
 
 
     }
+
+
+    //Realizar Local Search como nos ha indicado
+
 
 
     @Override

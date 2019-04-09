@@ -23,9 +23,8 @@ public class main {
         while((iterator.hasNext())){
             Instancia next = iterator.next();
             Grasp grasp = new Grasp();
-            Solucion solucion = new Solucion();
-
-            solucion.generarSolucionInicial(next);
+            Constructive constructive = new Constructive();
+            Solucion solucion = constructive.generarSolucionInicial(next);
             long startTime = System.nanoTime()*100000000;;
             grasp.BVNS(solucion,500, 15);
             long endTime = System.nanoTime()- startTime ;
