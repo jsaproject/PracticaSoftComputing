@@ -26,7 +26,7 @@ public class Solucion {
     }
 
     public Solucion(HashMap<Integer,Integer> nodos, float valor, Instancia im, Set<Integer> nodoscogidos) {
-        this.nodos_ordenados = (HashMap<Integer, Integer>) nodos.clone();
+        this.nodos_ordenados = new HashMap<>(nodos);
         this.valorObjetivo = valor;
         this.nodos_escogidos = new HashSet<>(nodoscogidos);
         this.posiciones_cambiadas_noreps = new HashSet();
@@ -62,74 +62,9 @@ public class Solucion {
     }
 
 
-/*    public Solucion generarSolucionInicial(Instancia instancia){
-        inst = instancia;
-        Random rand = new Random();
-        int max = instancia.getNum_vertices();
-        int size_vertices = instancia.getNum_verticestotales()-1;
-        int min = 0;
-        int value = rand.nextInt(size_vertices - min) + min;
-        int i = 0;
-        int aux_nodo = -1;
-            while(nodos_escogidos.size()<max){
-            float distancia_actual = -1;
-            float distancia_nodos;
-            nodos_ordenados.put(i, value);
-            nodos_escogidos.add(value);
-            ArrayList<Integer> aristas = instancia.getAristas(value);
-            Iterator<Integer> iterator = aristas.iterator();
-            while(iterator.hasNext()){
-                Integer next = iterator.next();
-                if (!nodos_escogidos.contains(next)){
-                    distancia_nodos = instancia.getDistancia(value, next);
-                    if ((distancia_actual < distancia_nodos) && (!nodos_escogidos.contains(next))){
-                        aux_nodo = next;
-                        distancia_actual = distancia_nodos;
-                    }
-                }
-            }
+    public void realizarShake(int a) {
 
-
-            value = aux_nodo;
-            i++;
-        }
-
-        int k = 0;
-        int size = nodos_ordenados.size();
-        int aux = 0;
-        while(k<size){
-            int j = k;
-            j++;
-            while(j<size){
-                Integer integer = nodos_ordenados.get(k);
-                Integer integer2 = nodos_ordenados.get(j);
-
-                valorObjetivo = valorObjetivo + inst.getDistancia(integer,integer2);
-                j++;
-            }
-            k++;
-        }
-
-        return this;
-    }*/
-
-    public void realizarCambios(int a) {
-
-/*        this.cambios_ordenados=valores_cambiados;
-        int size = cambios_ordenados.size();
-        int i = 0;
-        while(i<size){
-            HashMap<Integer, Integer> integerIntegerHashMap = cambios_ordenados.get(i);
-            Iterator<Map.Entry<Integer, Integer>> iterator = integerIntegerHashMap.entrySet().iterator();
-            while(iterator.hasNext()){
-                Map.Entry<Integer, Integer> next = iterator.next();
-                Integer key = next.getKey();
-                Integer value = next.getValue();
-                nodos_ordenados.put(key, value);
-                nodos_ordenados.put(value, key);
-            }
-        }*/
-        Random random = new Random();
+        Random random = new Random(inst.getSemillaRandom());
         int max = inst.getVertices().size()-1;
         int min = 0;
 
@@ -139,6 +74,36 @@ public class Solucion {
             b = random.nextInt(max - min) + min;
             cogido = nodos_escogidos.contains(b);
         }
+        realizarCambio(a,b);
+/*        Integer nodoquitado = nodos_ordenados.get(a);
+        nodos_escogidos.remove(nodoquitado);
+        nodos_ordenados.put(a,b);
+        nodos_escogidos.add(b);
+
+        int k = 0;
+        int size_total = nodos_ordenados.size();
+        while(k<size_total){
+            if (k!=a){
+                Integer integer = nodos_ordenados.get(k);
+
+
+                valorObjetivo = valorObjetivo - inst.getDistancia(integer,nodoquitado);
+
+
+                valorObjetivo = valorObjetivo + inst.getDistancia(integer,b);
+
+
+
+            }
+            k++;
+
+        }*/
+
+
+    }
+
+
+    public void realizarCambio(int a, int b){
         Integer nodoquitado = nodos_ordenados.get(a);
         nodos_escogidos.remove(nodoquitado);
         nodos_ordenados.put(a,b);
@@ -162,10 +127,7 @@ public class Solucion {
             k++;
 
         }
-
-
     }
-
 
     //Realizar Local Search como nos ha indicado
 

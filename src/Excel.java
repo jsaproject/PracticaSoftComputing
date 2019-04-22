@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Iterator;
+
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -11,37 +12,37 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-public class Excel {
 
+public class Excel {
 
 
     private String nombreArchivo;
     private FileOutputStream salida;
     private Workbook workbook;
 
-    public Excel(){
+    public Excel() {
         workbook = new XSSFWorkbook();
 
     }
 
-    public void comprobarExcel(String hoja, String algoritmo) {
-        nombreArchivo = "tiempos-" + algoritmo + ".xlsx";
+    public void comprobarExcel(String hoja, String algoritmo, int kvns, int ktabu) {
+        nombreArchivo = "tiempos-" + algoritmo + "-" + kvns + "-" + ktabu + ".xlsx";
         File archivo = new File(nombreArchivo);
         try {
             if (archivo.exists()) {
                 archivo.delete();
                 archivo.createNewFile();
                 crearExcel(hoja);
-            }else{
+            } else {
                 archivo.createNewFile();
                 crearExcel(hoja);
             }
 
-        }catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
-            }
+    }
 
     private void crearExcel(String hoja) {
 
@@ -64,37 +65,37 @@ public class Excel {
         }
     }
 
-    public void insertarInstancia(Instancia ins){
-        try{
+    public void insertarInstancia(Instancia ins) {
+        try {
             FileInputStream fisNew = new FileInputStream(nombreArchivo);
             workbook = WorkbookFactory.create(fisNew);
             int i = 0;
             Sheet sheetAt = workbook.getSheetAt(workbook.getActiveSheetIndex());
-            int lastRowNum = sheetAt.getLastRowNum()+1;
+            int lastRowNum = sheetAt.getLastRowNum() + 1;
             anadirValores(sheetAt, ins.getNombre_instancia(), Float.toString(ins.getFuncion_objetivo()), Float.toString(ins.getTiempo()), lastRowNum);
 
             salida = new FileOutputStream(nombreArchivo);
             workbook.write(salida);
 
-        }catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private void anadirValores(Sheet sheetAt, String primero, String segundo, String tercero, int columna){
-       Row a = null;
-       int i = 0;
-        while(i<3){
-            if (sheetAt.getRow(columna) == null){
+    private void anadirValores(Sheet sheetAt, String primero, String segundo, String tercero, int columna) {
+        Row a = null;
+        int i = 0;
+        while (i < 3) {
+            if (sheetAt.getRow(columna) == null) {
                 a = sheetAt.createRow(columna);
             }
 
             Cell cell = a.createCell(i);
-            switch (i){
-                case 0 :
+            switch (i) {
+                case 0:
                     cell.setCellValue(primero);
                     break;
-                case 1 :
+                case 1:
                     cell.setCellValue(segundo);
                     break;
                 case 2:
@@ -107,10 +108,8 @@ public class Excel {
     }
 
 
-
-
-    private void anadirCabeceras(){
-        try{
+    private void anadirCabeceras() {
+        try {
             int i = 0;
             FileInputStream fisNew = new FileInputStream(nombreArchivo);
             workbook = WorkbookFactory.create(fisNew);
@@ -121,23 +120,23 @@ public class Excel {
             salida = new FileOutputStream(nombreArchivo);
             workbook.write(salida);
 
-        }catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
     }
 
-    public void cerrarExcel(){
-        try{
+    public void cerrarExcel() {
+        try {
             workbook.close();
-        }catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
 
     public void hallarPromedio() {
-        try{
+        try {
             float tiempo_promedio = 0;
             float distancia_promedio = 0;
             FileInputStream fisNew = new FileInputStream(nombreArchivo);
@@ -146,7 +145,7 @@ public class Excel {
 
             Iterator<Row> rowIterator = sheetAt.iterator();
             rowIterator.next();
-            while(rowIterator.hasNext()){
+            while (rowIterator.hasNext()) {
                 Row next = rowIterator.next();
                 distancia_promedio = Float.parseFloat(next.getCell(1).getStringCellValue()) + distancia_promedio;
                 tiempo_promedio = Float.parseFloat(next.getCell(2).getStringCellValue()) + tiempo_promedio;
@@ -157,8 +156,8 @@ public class Excel {
             Row row = sheetAt.createRow(lastRowNum);
             int celda = 0;
             Cell cell = null;
-            while(celda < 3){
-                switch (celda){
+            while (celda < 3) {
+                switch (celda) {
                     case 0:
                         row.createCell(celda);
                         cell = row.getCell(celda);
@@ -167,12 +166,12 @@ public class Excel {
                     case 1:
                         row.createCell(celda);
                         cell = row.getCell(celda);
-                        cell.setCellValue(distancia_promedio/(sheetAt.getLastRowNum()-1));
+                        cell.setCellValue(distancia_promedio / (sheetAt.getLastRowNum() - 1));
                         break;
                     case 2:
                         row.createCell(celda);
                         cell = row.getCell(celda);
-                        cell.setCellValue(tiempo_promedio/(sheetAt.getLastRowNum()-1));
+                        cell.setCellValue(tiempo_promedio / (sheetAt.getLastRowNum() - 1));
                         break;
                 }
                 celda++;
@@ -181,9 +180,52 @@ public class Excel {
             salida = new FileOutputStream(nombreArchivo);
             workbook.write(salida);
 
-        }catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void insertarParametros(long endTimePrograma, int kvns, int kTabu, int semilla) {
+        try {
+            FileInputStream fisNew = new FileInputStream(nombreArchivo);
+            workbook = WorkbookFactory.create(fisNew);
+            Sheet sheetAt = workbook.getSheetAt(workbook.getActiveSheetIndex());
+            Row a = sheetAt.getRow(0);
+            Row b = sheetAt.getRow(1);
+            int i = 3;
+            while (i < 7) {
+
+                Cell cell = a.createCell(i);
+                Cell cell2 = b.createCell(i);
+                switch (i) {
+                    case 3:
+                        cell.setCellValue("Tiempo Programa");
+                        cell2.setCellValue(endTimePrograma);
+                        break;
+                    case 4:
+                        cell.setCellValue("K VNS");
+                        cell2.setCellValue(kvns);
+                        break;
+                    case 5:
+                        cell.setCellValue("K TABU");
+                        cell2.setCellValue(kTabu);
+                        break;
+                    case 6:
+                        cell.setCellValue("Semilla");
+                        cell2.setCellValue(semilla);
+                        break;
+                }
+
+                i++;
+            }
+
+            salida = new FileOutputStream(nombreArchivo);
+            workbook.write(salida);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }
 

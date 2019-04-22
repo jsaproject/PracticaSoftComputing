@@ -4,7 +4,8 @@ public class Constructive {
 
     public Solucion generarSolucionInicial(Instancia instancia){
         Solucion solucion = new Solucion();
-        Random rand = new Random();
+        Random rand = new Random(instancia.getSemillaRandom());
+        solucion.setI(instancia);
         int max = instancia.getNum_vertices();
         int size_vertices = instancia.getNum_verticestotales()-1;
         int min = 0;

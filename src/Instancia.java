@@ -6,11 +6,16 @@ import java.util.*;
 
 public class Instancia {
 
-    HashMap<Integer, HashMap<Integer, Float>> vertices;
-    float funcion_objetivo;
-    float tiempo;
-    String nombre_instancia;
-    Integer num_vertices;
+    private HashMap<Integer, HashMap<Integer, Float>> vertices;
+    private float funcion_objetivo;
+    private float tiempo;
+    private String nombre_instancia;
+    private Integer num_vertices;
+    private Integer semillaRandom;
+    private ArrayList<Integer> verticesRecorrer;
+    private HashMap<Integer, Integer> posicionVertices;
+    private int i = 0;
+
 
     public Instancia() {
         this.vertices = new HashMap<>();
@@ -18,14 +23,26 @@ public class Instancia {
         this.tiempo = -1;
         this.nombre_instancia = "";
         this.num_vertices = -1;
+        this.semillaRandom = 1234;
+        this.verticesRecorrer = new ArrayList<>();
+        this.posicionVertices = new HashMap<>();
+        this.i = 0;
+    }
+
+    public Integer getSemillaRandom() {
+        return semillaRandom;
+    }
+
+    public void setSemillaRandom(Integer semillaRandom) {
+        this.semillaRandom = semillaRandom;
     }
 
     public Integer getNum_vertices() {
-        return num_vertices;
+        return this.num_vertices;
     }
 
     public Integer getNum_verticestotales(){
-        return vertices.size();
+        return this.vertices.size();
     }
 
     public void setNum_vertices(Integer num_vertices) {
@@ -84,38 +101,45 @@ public class Instancia {
 
     public ArrayList<Integer> getAristas(int a){
         ArrayList<Integer> aristas = new ArrayList<>();
-        Iterator<Integer> iterator = vertices.get(a).keySet().iterator();
+        Iterator<Integer> iterator = this.vertices.get(a).keySet().iterator();
         while(iterator.hasNext()){
             aristas.add(iterator.next());
         }
         return aristas;
     }
 
-    public Set<Integer> getVertices() {
-        return vertices.keySet();
+    public ArrayList<Integer> getVertices() {
+
+        return new ArrayList<>(this.verticesRecorrer);
     }
 
     public float getDistancia(Integer a, Integer b) {
-        HashMap<Integer, Float> integerFloatHashMap = vertices.get(a);
+        if(a==b){
+            return -1000f;
+        }
+        HashMap<Integer, Float> integerFloatHashMap = this.vertices.get(a);
         return integerFloatHashMap.get(b);
     }
 
     public void setVertice(Integer a) {
             HashMap<Integer, Float> integerFloatHashMap = new HashMap<>();
-            if (vertices.get(a) == null){
-                vertices.put(a, integerFloatHashMap);
+            if (this.vertices.get(a) == null){
+                this.vertices.put(a, integerFloatHashMap);
+                this.verticesRecorrer.add(i,a);
+                this.posicionVertices.put(a,i);
+                i++;
             }
 
 
         }
 
         public void setArco (Integer a, Integer b, Float distancia){
-            HashMap<Integer, Float> integerFloatHashMap = vertices.get(a);
+            HashMap<Integer, Float> integerFloatHashMap = this.vertices.get(a);
             if (integerFloatHashMap == null) {
                 integerFloatHashMap = new HashMap<>();
             }
             integerFloatHashMap.put(b, distancia);
-            vertices.put(a, integerFloatHashMap);
+            this.vertices.put(a, integerFloatHashMap);
         }
 
 

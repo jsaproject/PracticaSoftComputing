@@ -3,15 +3,16 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class Grasp {
+public class VNS {
 
     private Solucion solucionFinal;
     private float funcionObjetivo;
     private int kmaximo;
     private Set<Integer> solucionesVisitadas;
     private Set<Solucion> solucionesguardadas;
+    private int valorTabu;
 
-    public Grasp() {
+    public VNS() {
         this.solucionFinal = new Solucion();
         this.funcionObjetivo = -1;
         this.kmaximo = -1;
@@ -28,39 +29,28 @@ public class Grasp {
         this.funcionObjetivo = funcionObjetivo;
     }
 
-    public int BVNS(Solucion a, int kmax, long finaltime){
-
+    public int BVNS(Solucion a, int kmax, long finaltime, int varTabu){
         solucionFinal = a;
         solucionesVisitadas.add(solucionFinal.hashCode());
         solucionesguardadas.add(solucionFinal);
         funcionObjetivo = solucionFinal.getValorObjetivo();
         kmaximo = kmax;
-        Solucion solucionShake = new Solucion();
-        Solucion solucionLocalSearch = new Solucion();
-        Timer timer = new Timer();
-
-        //while (timer.purge()<finaltime){
+        valorTabu = varTabu;
             int kactual = 1;
             while(kactual<=kmax){
-                    solucionShake = shake(a, kactual);
-                    if(!solucionesVisitadas.contains(solucionShake.hashCode())){
-                        solucionLocalSearch = localSearch(solucionShake);
-                        solucionesVisitadas.add(solucionLocalSearch.hashCode());
-                        solucionesguardadas.add(solucionLocalSearch);
+                        Solucion solucionShake = shake(a, kactual);
+                        Solucion solucionLocalSearch = localSearch(solucionShake);
                         kactual = NeighborhoodChange(solucionFinal,solucionLocalSearch, kactual);
-                    }else{
-                        kactual++;
-                    }
 
             }
-        //}
 
         return kmax;
 
     }
 
     private int NeighborhoodChange(Solucion a, Solucion solucionLocalSearch, int kactual) {
-        if (a.getValorObjetivo()>=solucionLocalSearch.getValorObjetivo()){
+        CompararFloats compararFloats = new CompararFloats();
+        if (compararFloats.mayor(a.getValorObjetivo(), solucionLocalSearch.getValorObjetivo())){
             return kactual+1;
         }else{
             solucionFinal = solucionLocalSearch;
@@ -72,7 +62,7 @@ public class Grasp {
 
     private Solucion shake (Solucion solucionFinal, int kactual) {
         Solucion solucion = new Solucion(solucionFinal.getNodos_ordenados(),solucionFinal.getValorObjetivo(), solucionFinal.getI(),solucionFinal.getNodos_escogidos());
-        Random rand = new Random();
+        Random rand = new Random(solucionFinal.getI().getSemillaRandom());
         int max = solucionFinal.getNodos_ordenados().size()-1;
         int min = 0;
         int i = 0;
@@ -80,7 +70,7 @@ public class Grasp {
         while(i < kactual){
 
 
-        solucion.realizarCambios(rand.nextInt(max - min) + min);
+        solucion.realizarShake(rand.nextInt(max - min) + min);
         i++;
         }
 
@@ -90,7 +80,8 @@ public class Grasp {
 
 
     private Solucion localSearch(Solucion solucionShake) {
-        return solucionShake;
+        TabuSearch tabuSearch = new TabuSearch(solucionShake, valorTabu);
+        return tabuSearch.TabuSearch();
     }
 
 
