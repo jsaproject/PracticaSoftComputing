@@ -6,7 +6,7 @@ public class Solucion {
     private Set<Integer> nodos_escogidos;
     private float valorObjetivo;
     private Instancia inst;
-    private Set posiciones_cambiadas_noreps;
+
 
 
     public Set<Integer> getNodos_escogidos() {
@@ -29,7 +29,6 @@ public class Solucion {
         this.nodos_ordenados = new HashMap<>(nodos);
         this.valorObjetivo = valor;
         this.nodos_escogidos = new HashSet<>(nodoscogidos);
-        this.posiciones_cambiadas_noreps = new HashSet();
         this.inst = im;
 
     }
@@ -39,7 +38,6 @@ public class Solucion {
         this.valorObjetivo = 0;
         this.nodos_escogidos = new HashSet<>();
         this.inst = new Instancia();
-        this.posiciones_cambiadas_noreps = new HashSet();
 
     }
 
@@ -69,11 +67,12 @@ public class Solucion {
         int min = 0;
 
         boolean cogido = true;
-        int b = 0;
-        while (cogido){
-            b = random.nextInt(max - min) + min;
+
+        int b = random.nextInt(max - min) + min;
+/*        while (cogido){
+
             cogido = nodos_escogidos.contains(b);
-        }
+        }*/
         realizarCambio(a,b);
 /*        Integer nodoquitado = nodos_ordenados.get(a);
         nodos_escogidos.remove(nodoquitado);

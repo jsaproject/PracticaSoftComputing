@@ -114,11 +114,18 @@ public class Instancia {
     }
 
     public float getDistancia(Integer a, Integer b) {
-        if(a==b){
+        if(a.equals(b)){
             return -1000f;
+        }else{
+            try{
+                HashMap<Integer, Float> integerFloatHashMap = this.vertices.get(a);
+                return integerFloatHashMap.get(b);
+            }catch (Exception e){
+                System.out.println("nodo1: "+a+" nodo2: " + b+ " nombre_instancia: " +nombre_instancia);
+            }
+
         }
-        HashMap<Integer, Float> integerFloatHashMap = this.vertices.get(a);
-        return integerFloatHashMap.get(b);
+        return 1;
     }
 
     public void setVertice(Integer a) {

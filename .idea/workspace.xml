@@ -2,20 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a78692e2-2176-454f-994a-89269b8f20b5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/CompararFloats.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GKD-a_1_n10_m2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PracticaSoftComputing/Excel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PracticaSoftComputing/Excel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PracticaSoftComputing/Instancia.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PracticaSoftComputing/Instancia.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PracticaSoftComputing/main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PracticaSoftComputing/main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Constructive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Constructive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Excel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Excel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Grasp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VNS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Instancia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Instancia.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Solucion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Solucion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TabuSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TabuSearch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tiempos-VNS.xlsx" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,8 +26,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/VNS.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="40" selection-start-line="40" selection-end-line="40" />
+            <state relative-caret-position="1105">
+              <caret line="72" column="36" selection-start-line="72" selection-start-column="36" selection-end-line="72" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -50,26 +44,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Constructive.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/TabuSearch.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="59" selection-start-line="59" selection-end-line="62" selection-end-column="9" />
+            <state relative-caret-position="1156">
+              <caret line="68" column="26" selection-start-line="68" selection-start-column="26" selection-end-line="68" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/TabuSearch.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="36" column="29" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+            <state relative-caret-position="323">
+              <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -86,7 +80,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/HashInstancias.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
+            <state relative-caret-position="1037">
               <caret line="68" selection-start-line="68" selection-end-line="68" />
             </state>
           </provider>
@@ -95,8 +89,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Excel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="28" column="67" lean-forward="true" selection-start-line="28" selection-start-column="67" selection-end-line="28" selection-end-column="67" />
+            <state relative-caret-position="255">
+              <caret line="28" column="67" selection-start-line="28" selection-start-column="67" selection-end-line="28" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -104,12 +98,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Solucion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="822">
-              <caret line="131" column="48" lean-forward="true" selection-start-line="131" selection-start-column="48" selection-end-line="131" selection-end-column="48" />
-              <folding>
-                <element signature="e#1242#1243#0" expanded="true" />
-                <element signature="e#1278#1279#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="85">
+              <caret line="5" column="33" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -117,8 +107,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Instancia.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="112" column="54" lean-forward="true" selection-start-line="112" selection-start-column="54" selection-end-line="112" selection-end-column="54" />
+            <state relative-caret-position="1564">
+              <caret line="117" selection-start-line="117" selection-end-line="117" />
             </state>
           </provider>
         </entry>
@@ -153,19 +143,20 @@
         <option value="$PROJECT_DIR$/src/HashInstancias.java" />
         <option value="$PROJECT_DIR$/src/Grasp.java" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/Learning" />
-        <option value="$PROJECT_DIR$/src/Constructive.java" />
         <option value="$PROJECT_DIR$/src/CompararFloats.java" />
         <option value="$PROJECT_DIR$/src/VNS.java" />
-        <option value="$PROJECT_DIR$/src/Solucion.java" />
-        <option value="$PROJECT_DIR$/src/Instancia.java" />
         <option value="$PROJECT_DIR$/src/Excel.java" />
-        <option value="$PROJECT_DIR$/src/main.java" />
+        <option value="$PROJECT_DIR$/src/Instancia.java" />
+        <option value="$PROJECT_DIR$/src/Solucion.java" />
         <option value="$PROJECT_DIR$/src/TabuSearch.java" />
+        <option value="$PROJECT_DIR$/src/Constructive.java" />
+        <option value="$PROJECT_DIR$/src/main.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
+    <option name="x" value="373" />
+    <option name="y" value="37" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -174,6 +165,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -196,7 +188,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -280,7 +271,9 @@
       <workItem from="1555777708198" duration="6952000" />
       <workItem from="1555843777365" duration="9503000" />
       <workItem from="1555869734127" duration="12169000" />
-      <workItem from="1555928149396" duration="8045000" />
+      <workItem from="1555928149396" duration="15005000" />
+      <workItem from="1555956453903" duration="6893000" />
+      <workItem from="1556010758914" duration="4554000" />
     </task>
     <task id="LOCAL-00001" summary="Agregado parte de crear solucion">
       <created>1553191023038</created>
@@ -296,11 +289,18 @@
       <option name="project" value="LOCAL" />
       <updated>1554226282765</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Agregado Tabu como localSearch">
+      <created>1555946669116</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1555946669116</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93161000" />
+    <option name="totallyTimeSpent" value="111568000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -315,7 +315,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16684435" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17004265" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -324,8 +324,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info id="Learn" order="7" weight="0.3294204" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.31852654" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31852654" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3900325" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -387,7 +387,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Agregado parte de crear solucion" />
     <MESSAGE value="Agregado parte de hash" />
-    <option name="LAST_COMMIT_MESSAGE" value="Agregado parte de hash" />
+    <MESSAGE value="Agregado Tabu como localSearch" />
+    <option name="LAST_COMMIT_MESSAGE" value="Agregado Tabu como localSearch" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -399,10 +400,10 @@
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Solucion.java</url>
-          <line>67</line>
+          <url>file://$PROJECT_DIR$/src/Constructive.java</url>
+          <line>71</line>
           <properties />
-          <option name="timeStamp" value="10" />
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -426,6 +427,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/VNS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1105">
+          <caret line="72" column="36" selection-start-line="72" selection-start-column="36" selection-end-line="72" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/util/Random.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5916">
@@ -435,54 +443,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Constructive.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+        <state relative-caret-position="1156">
+          <caret line="68" column="26" selection-start-line="68" selection-start-column="26" selection-end-line="68" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/HashInstancias.java">
+    <entry file="file://$PROJECT_DIR$/src/TabuSearch.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="68" selection-start-line="68" selection-end-line="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Instancia.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="112" column="54" lean-forward="true" selection-start-line="112" selection-start-column="54" selection-end-line="112" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Solucion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="822">
-          <caret line="131" column="48" lean-forward="true" selection-start-line="131" selection-start-column="48" selection-end-line="131" selection-end-column="48" />
-          <folding>
-            <element signature="e#1242#1243#0" expanded="true" />
-            <element signature="e#1278#1279#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/VNS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Excel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="28" column="67" lean-forward="true" selection-start-line="28" selection-start-column="67" selection-end-line="28" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        <state relative-caret-position="612">
+          <caret line="36" column="29" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -493,10 +462,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TabuSearch.java">
+    <entry file="file://$PROJECT_DIR$/src/HashInstancias.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="59" selection-start-line="59" selection-end-line="62" selection-end-column="9" />
+        <state relative-caret-position="1037">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Excel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="28" column="67" selection-start-line="28" selection-start-column="67" selection-end-line="28" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Solucion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="33" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Instancia.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1564">
+          <caret line="117" selection-start-line="117" selection-end-line="117" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
         </state>
       </provider>
     </entry>

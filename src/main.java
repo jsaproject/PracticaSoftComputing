@@ -2,11 +2,13 @@
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.concurrent.TimeUnit;
 
 
 public class main {
 
     public static void main(String[] args) {
+
 
 
       String ruta_carpeta = "C:\\instancias";
@@ -16,15 +18,16 @@ public class main {
         ArrayList<Instancia> instancias = hashInstancias.getInstancias();
         Iterator<Instancia> iterator = instancias.iterator();
         Excel excel = new Excel();
-        int kvns= 100;
-        int kTabu = 10;
-       excel.comprobarExcel("VNS", "VNS", kvns, kTabu);
+        int kvns= 10;
+        int kTabu = 1;
+        excel.comprobarExcel("VNS", "VNS", kvns, kTabu);
         long startTimePrograma = System.currentTimeMillis();
         while((iterator.hasNext())){
             Instancia next = iterator.next();
             VNS VNS = new VNS();
             Constructive constructive = new Constructive();
-            Solucion solucion = constructive.generarSolucionInicial(next);
+            //Solucion solucion = constructive.generarSolucionInicial(next);
+            Solucion solucion = constructive.generarSolucionInicialAleatorio(next);
             long startTime = System.nanoTime();
             VNS.BVNS(solucion,kvns, 15, kTabu);
             long endTime = System.nanoTime()- startTime ;
@@ -37,7 +40,6 @@ public class main {
 
         excel.hallarPromedio();
         excel.cerrarExcel();
-
 
 
 

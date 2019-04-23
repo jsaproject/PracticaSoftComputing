@@ -30,9 +30,12 @@ public class TabuSearch {
 
     private void generarVecindadReducida() {
         int size = vecindad.size();
-        size = size/15;
+        size = size/3;
         int i = 0;
-        if (size==0){
+        Random random = new Random(x.getI().getSemillaRandom());
+        int i1 = random.nextInt(vecindad.size()-0)+0;
+        x = vecindad.get(i1);
+/*        if (size==0){
             size = vecindad.size();
         }
         while(i<size){
@@ -47,28 +50,22 @@ public class TabuSearch {
                 }
             }
             i++;
-        }
+        }*/
     }
 
     private void generarVecindad() {
         Instancia i = this.x.getI();
         int size = x.getNodos_escogidos().size();
         int k = 0;
-        HashMap<Integer, Integer> nodos_ordenados = new HashMap<>(x.getNodos_ordenados());
-        Set<Integer> nodos_escogidos = x.getNodos_escogidos();
          ArrayList<Integer> vertices = i.getVertices();
-        Iterator<Integer> iterator1 = nodos_escogidos.iterator();
-        while(iterator1.hasNext()){
-            vertices.remove(iterator1.next());
-        }
-        while(k<size) {
+         while(k<size) {
             Iterator<Integer> iterator = vertices.iterator();
             while(iterator.hasNext()){
                 Solucion solucion = new Solucion(x.getNodos_ordenados(),x.getValorObjetivo(), x.getI(),x.getNodos_escogidos());
                 solucion.realizarCambio(k,iterator.next());
                 vecindad.add(solucion);
                 CompararFloats compararFloats = new CompararFloats();
-                if(compararFloats.mayor(y.getValorObjetivo(), solucion.getValorObjetivo())){
+                if(compararFloats.mayor(solucion.getValorObjetivo(), y.getValorObjetivo())){
                     y = solucion;
                 }
             }

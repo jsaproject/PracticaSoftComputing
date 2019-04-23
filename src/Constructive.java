@@ -57,4 +57,49 @@ public class Constructive {
 
         return solucion;
     }
+
+    public Solucion generarSolucionInicialAleatorio(Instancia instancia){
+        Solucion solucion = new Solucion();
+        Random rand = new Random(instancia.getSemillaRandom());
+        solucion.setI(instancia);
+        int max = instancia.getNum_vertices();
+        int size_vertices = instancia.getNum_verticestotales()-1;
+        int min = 0;
+        int i = 0;
+        int aux_nodo = -1;
+        HashMap<Integer, Integer> nodos_ordenados = new HashMap<>();
+        Set<Integer> nodos_escogidos = new HashSet<>();
+        while(nodos_escogidos.size()<max){
+            int value = rand.nextInt(size_vertices - min) + min;
+
+            //if(!nodos_escogidos.contains(value)){
+                nodos_ordenados.put(i, value);
+                nodos_escogidos.add(value);
+                i++;
+            //}
+
+        }
+
+        solucion.setNodos_escogidos(nodos_escogidos);
+        solucion.setNodos_ordenados(nodos_ordenados);
+
+        int k = 0;
+        int size = solucion.getNodos_ordenados().size();
+        int aux = 0;
+        while(k<size){
+            int j = k;
+            j++;
+            while(j<size){
+                Integer integer = solucion.getNodos_ordenados().get(k);
+                Integer integer2 = solucion.getNodos_ordenados().get(j);
+
+                solucion.setValorObjetivo(solucion.getValorObjetivo() + instancia.getDistancia(integer,integer2));
+                j++;
+            }
+            k++;
+        }
+
+        return solucion;
+
+    }
 }
