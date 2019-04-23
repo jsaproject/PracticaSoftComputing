@@ -3,13 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a78692e2-2176-454f-994a-89269b8f20b5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PracticaSoftComputing/Instancia.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PracticaSoftComputing/Instancia.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PracticaSoftComputing/main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PracticaSoftComputing/main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Constructive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Constructive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Instancia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Instancia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Solucion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Solucion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TabuSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TabuSearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -63,7 +56,7 @@
         <entry file="file://$PROJECT_DIR$/src/main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
-              <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+              <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -154,9 +147,8 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="373" />
-    <option name="y" value="37" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-7" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -201,7 +193,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.52068967" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.selected.configurable" value="application.passwordSafe" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -273,7 +265,7 @@
       <workItem from="1555869734127" duration="12169000" />
       <workItem from="1555928149396" duration="15005000" />
       <workItem from="1555956453903" duration="6893000" />
-      <workItem from="1556010758914" duration="4554000" />
+      <workItem from="1556010758914" duration="5897000" />
     </task>
     <task id="LOCAL-00001" summary="Agregado parte de crear solucion">
       <created>1553191023038</created>
@@ -296,11 +288,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555946669116</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Finalizado codigo">
+      <created>1556024602419</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1556024602420</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111568000" />
+    <option name="totallyTimeSpent" value="112911000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -312,10 +311,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17004265" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.34901533" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -325,15 +323,15 @@
       <window_info id="Learn" order="7" weight="0.3294204" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31852654" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.31852654" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3900325" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32827735" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.33260393" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32936078" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32827735" />
       <window_info anchor="bottom" id="Dependency Viewer" order="13" weight="0.32932165" />
@@ -388,7 +386,8 @@
     <MESSAGE value="Agregado parte de crear solucion" />
     <MESSAGE value="Agregado parte de hash" />
     <MESSAGE value="Agregado Tabu como localSearch" />
-    <option name="LAST_COMMIT_MESSAGE" value="Agregado Tabu como localSearch" />
+    <MESSAGE value="Finalizado codigo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finalizado codigo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -493,7 +492,7 @@
     <entry file="file://$PROJECT_DIR$/src/main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
-          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
         </state>
       </provider>
     </entry>
